@@ -1,9 +1,17 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
+import articles from './article-content'
+
 const ArticlePage = () => {
     const { articleId} = useParams()
+    const article = articles.find(article => article.name === articleId)
     return (
-        <h1>Article Page with id: { articleId }</h1>
+        <>
+          <h1>{article.name}</h1>
+          { article.content.map(paragraph => (
+              <p>{ paragraph }</p>
+          ))}
+        </>
     )
 }
 
