@@ -5,12 +5,14 @@ import HomePage from './pages/HomePage'
 import ArticlesListPage from './pages/ArticlesListPage'
 import ArticlePage from './pages/ArticlePage'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import NavBar from './NavBar'
+
 function App() {
 
   return (
     <BrowserRouter>
         <div className="App">
-            <h1>My Blog</h1>
+            <NavBar/>
             <div id="page-body">
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
